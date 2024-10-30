@@ -2,9 +2,9 @@ namespace CashApp
 {
     public partial class Form1 : Form
     {
-        private String Items;
-        private double discount, payment, price, change, ConvDiscount, DiscuntPrice, amount, quantity, result;
-        
+        private string Items;
+        private double discount, payment, price, change, ConvDiscount, DiscuntPrice, amount, quantity;
+
         public Form1()
         {
             InitializeComponent();
@@ -12,23 +12,21 @@ namespace CashApp
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            // Your label click logic here
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
-
+            // Your label click logic here
         }
 
         private void ComputeBT_Click(object sender, EventArgs e)
         {
             string invalidMessage = "Please complete your data.";
             string inputErrorMessage = "Input error: Please enter valid numeric values.";
-        Items = ItemsTB.Text;
-            price = double.Parse(PriceTB.Text);
-            quantity = double.Parse(QuantityTB.Text);
-            discount = double.Parse(DiscuntTB.Text);
+            Items = ItemsTB.Text;
 
+            // Validate and parse inputs
             if (!double.TryParse(PriceTB.Text, out price))
             {
                 MessageBox.Show(inputErrorMessage);
@@ -46,59 +44,46 @@ namespace CashApp
                 MessageBox.Show(inputErrorMessage);
                 return;
             }
-            // Pagwala input sa text box
-            if (string.IsNullOrWhiteSpace(Items) ||string.IsNullOrWhiteSpace(price.ToString()) || string.IsNullOrWhiteSpace(quantity.ToString()))
+
+            // Check if item name is provided
+            if (string.IsNullOrWhiteSpace(Items))
             {
                 MessageBox.Show(invalidMessage);
                 return;
             }
 
-            if (!double.TryParse(PriceTB.Text, out price))
-            {
-                MessageBox.Show(inputErrorMessage);
-                return;
-            }
-
-            if (!double.TryParse(QuantityTB.Text, out quantity))
-            {
-                MessageBox.Show(inputErrorMessage);
-                return;
-            }
-
-            if (!double.TryParse(DiscuntTB.Text, out discount))
-            {
-                MessageBox.Show(inputErrorMessage);
-                return;
-            }
             ConvDiscount = discount * 0.01;
-            result = price * ConvDiscount;
-            DiscuntPrice = price - result;
+            DiscuntPrice = price - (price * ConvDiscount);
             amount = DiscuntPrice * quantity;
             AmountLB.Text = amount.ToString("F2");
-
         }
 
         private void SumbitBT_Click(object sender, EventArgs e)
         {
-            string invalidpament = "MAG BAYAD KA!!";
-            string invalidamount = "KULOANG PAGBAYAD MO";
+            string invalidPaymentMessage = "MAG BAYAD KA!!";
+            string invalidAmountMessage = "KULOANG PAGBAYAD MO";
             string inputErrorMessage = "Input error: Please enter valid numeric values.";
+
+            // Validate and parse payment input
             if (!double.TryParse(PaymentTB.Text, out payment))
             {
                 MessageBox.Show(inputErrorMessage);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(price.ToString()))
+            // Check if amount has been calculated
+            if (amount <= 0)
             {
-                MessageBox.Show(invalidpament);
+                MessageBox.Show(invalidPaymentMessage);
                 return;
             }
-            payment = double.Parse(PaymentTB.Text);
+
+            // Calculate change
             change = payment - amount;
+
             if (change < 0)
             {
-                MessageBox.Show(invalidamount);
+                MessageBox.Show(invalidAmountMessage);
                 return;
             }
 

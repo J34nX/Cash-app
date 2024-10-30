@@ -1,0 +1,11 @@
+C:\LanSchool Files\Raffy\CashApp\CashApp\bin\Debug\CashApp.exe.config
+C:\LanSchool Files\Raffy\CashApp\CashApp\bin\Debug\CashApp.exe
+C:\LanSchool Files\Raffy\CashApp\CashApp\bin\Debug\CashApp.pdb
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.csproj.AssemblyReference.cache
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.csproj.SuggestedBindingRedirects.cache
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.Form1.resources
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.Properties.Resources.resources
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.csproj.GenerateResource.cache
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.csproj.CoreCompileInputs.cache
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.exe
+C:\LanSchool Files\Raffy\CashApp\CashApp\obj\Debug\CashApp.pdb
